@@ -23,12 +23,12 @@
   )
   set text(size: 12.5pt, lang: "es")
   set par(linebreaks: "optimized", justify: true, spacing: 1.8em, leading: 1.2em)
-  let azulunir = rgb("#0098cd")
+  //let azulunir = rgb("#0098cd")
 
   show link: it => {
     if not (it.body.text.contains(it.dest)) {
-      text(fill: azulunir, underline(it))
-    } else { text(fill: azulunir, font: "IBM Plex Mono", size: 10.2pt, underline(it)) }
+      text(fill: blue, underline(it))
+    } else { text(fill: blue, font: "IBM Plex Mono", size: 10.2pt, underline(it)) }
   }
 
   /*
@@ -44,10 +44,10 @@
     pagebreak()
     v(130pt)
     if item.numbering != none {
-      text(azulunir, weight: "light", size: 20pt)[#context counter(heading).display()]
+      text(black, weight: "bold", size: 20pt)[#context counter(heading).display()]
       " "
     }
-    text(azulunir, weight: "light", 20pt)[#item.body]
+    text(black, weight: "bold", 20pt)[#item.body]
     v(0.1em)
   }
 
@@ -56,9 +56,9 @@
   */
   show heading.where(level: 2): item => {
     v(20pt)
-    text(azulunir, weight: "light", size: 15pt)[#context counter(heading).display()]
+    text(black, weight: "bold", size: 15pt)[#context counter(heading).display()]
     " "
-    text(azulunir, weight: "light", 15pt)[#item.body]
+    text(black, weight: "bold", 15pt)[#item.body]
     v(0.1em)
   }
 
@@ -67,35 +67,35 @@
   */
 
   align(center)[
-    #v(12pt)
-    #image("logo_uvigo.png", width: 48%)
-
+    #v(25pt)
+    #image("logo_uvigo.png", width: 45%)
 
     #text(size: 17pt)[
       #strong[E]SCOLA #strong[S]UPERIOR #strong[D]E #strong[E]NXEÑARÍA #strong[I]NFORMÁTICA
     ]
-    #v(65pt)
+    #v(60pt)
     #text(size: 13pt)[Memoria do Traballo de Fin de Grao que presenta]
     #v(-10pt)
-    #text(size: 16pt, weight: "bold")[#alumno]
+    #text(size: 15pt, weight: "bold")[#alumno]
     #v(-10pt)
     #text(size: 13pt)[para a obtención do Título de Graduado en Enxeñaría Informática]
     #v(10pt)
-    #text(size: 16pt, weight: "bold")[#titulo]
+    #text(size: 15pt, weight: "bold")[#titulo]
 
-    #v(150pt)
+    #v(145pt)
     #align(center)[
       #grid(
         columns: (auto, 1fr),
         column-gutter: 16pt,
-        image("emblema_ing_informatica.png", width: 3.3cm),
+        image("emblema_ing_informatica.png", width: 3.2cm),
         align(left)[
           #stack(
             spacing: 8pt,
+            v(5pt),
             [#fecha],
-            v(25pt),
+            v(22pt),
             [#strong[Traballo de Fin de Grao Nº:]#h(1.5mm) #tfg_num],
-            v(25pt),
+            v(22pt),
             [#strong[Titor/a:]#h(1.5mm)  #tutor],
             [#strong[Área de coñecemento:]#h(1.5mm)  #area],
             [#strong[Departamento:]#h(1.5mm) #departamento],
@@ -118,7 +118,7 @@
   pagebreak()
 
   align(top)[
-    #text(fill: azulunir, size: 18pt, weight: "regular")[Resumen]
+    #text(fill: black, size: 18pt, weight: "regular")[Resumen]
 
     #resumen
 
@@ -126,11 +126,11 @@
     #pclave
   ]
   align(bottom)[
-    #text(fill: azulunir, size: 18pt)[Abstract]
+    #text(fill: black, size: 18pt)[Abstract]
 
     #abstract
 
-    #text(weight: "bold")[Keywords]:
+    #text(weight: "bold")[Keywords:]
     #kwords
   ]
 

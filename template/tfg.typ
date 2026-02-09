@@ -23,9 +23,11 @@ $ curl (grad f), tensor(T, -mu, +nu), pdv(f, x, y, [1,2]) $
 
 
 = Estado del arte
-El nombre de esta sección es opcional. #link("https://unir.net")[Aquí] tenemos un enlace. #link("https://unir.net")
+El nombre de esta sección es opcional. #link("https://www.uvigo.gal/")[Aquí] tenemos un enlace. #link("https://www.uvigo.gal/")
 
 = Material y métodos
+
+== Materiales
 
 = Resultados y discusión
 
