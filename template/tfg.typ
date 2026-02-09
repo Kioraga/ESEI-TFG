@@ -1,7 +1,7 @@
 
-//#import "@local/tfguf:0.0.3": *
-#import "../eseitfg.typ": *
-#show: unirfisica.with(
+//#import "@local/esei-tfg:0.1.0": *
+#import "../esei-tfg.typ": *
+#show: esei-tfg.with(
   titulo: "Título do Traballo de Fin de Grado",
   alumno: "D. Nome Alumna/o",
   agradecimientos: quote(attribution: "Yo", block: true)[_A mis padres_],

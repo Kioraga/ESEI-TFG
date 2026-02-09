@@ -1,7 +1,7 @@
 #import "@preview/unify:0.7.1": num, qty, numrange, qtyrange
 #import "@preview/physica:0.9.5": *
 #let longitud-abstract = 138
-#let unirfisica(
+#let esei-tfg(
   titulo: "Título do Traballo de Fin de Grado",
   alumno: "D. Nome Alumna/o",
   tutor: "Nome do meu titor",
