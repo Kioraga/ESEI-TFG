@@ -14,6 +14,7 @@
   pclave: lorem(6).replace(" ", ", ").replace(",,", ","),
   //kwords: lorem(6).replace(" ", ", ").replace(",,", ","),
   agradecimientos: quote(attribution: [Plato], block: true)[#lorem(20)],
+  idioma: "gl",
   doc,
 ) = {
   set page(
@@ -21,7 +22,35 @@
     margin: (left: 3cm, right: 3cm),
     footer: none,
   )
-  set text(size: 12.5pt, lang: "es")
+  let etiquetas = (
+    gl: (
+      memoria: "Memoria do Traballo de Fin de Grao que presenta",
+      titulacion: "para a obtención do Título de Graduado en Enxeñaría Informática",
+      tfg_num: "Traballo de Fin de Grao Nº:",
+      tutor: "Titor/a:",
+      area: "Área de coñecemento:",
+      departamento: "Departamento:",
+      resumen: "Resumen",
+      palabras_clave: "Palabras clave:",
+      indice: "Índice de contenidos",
+      lang: "gl",
+    ),
+    es: (
+      memoria: "Memoria del Trabajo de Fin de Grado que presenta",
+      titulacion: "para la obtención del Título de Graduado en Ingeniería Informática",
+      tfg_num: "Trabajo de Fin de Grado Nº:",
+      tutor: "Tutor/a:",
+      area: "Área de conocimiento:",
+      departamento: "Departamento:",
+      resumen: "Resumen",
+      palabras_clave: "Palabras clave:",
+      indice: "Índice de contenidos",
+      lang: "es",
+    ),
+  )
+  let labels = etiquetas.at(idioma, default: etiquetas.gl)
+
+  set text(size: 12.5pt, lang: labels.lang)
   set par(linebreaks: "optimized", justify: true, spacing: 1.8em, leading: 1.2em)
   //let azulunir = rgb("#0098cd")
   
@@ -70,15 +99,13 @@
     #v(25pt)
     #image("logo_uvigo.png", width: 45%)
     
-    #text(size: 17pt)[
-      #strong[E]SCOLA #strong[S]UPERIOR #strong[D]E #strong[E]NXEÑARÍA #strong[I]NFORMÁTICA
-    ]
+    #text(size: 17pt)[#strong[E]SCOLA #strong[S]UPERIOR #strong[D]E #strong[E]NXEÑARÍA #strong[I]NFORMÁTICA]
     #v(60pt)
-    #text(size: 13pt)[Memoria do Traballo de Fin de Grao que presenta]
+    #text(size: 13pt)[#labels.memoria]
     #v(-10pt)
     #text(size: 15pt, weight: "bold")[#alumno]
     #v(-10pt)
-    #text(size: 13pt)[para a obtención do Título de Graduado en Enxeñaría Informática]
+    #text(size: 13pt)[#labels.titulacion]
     #v(10pt)
     #text(size: 15pt, weight: "bold")[#titulo]
     
@@ -94,11 +121,11 @@
             v(5pt),
             [#fecha],
             v(22pt),
-            [#strong[Traballo de Fin de Grao Nº:]#h(1.5mm) #tfgnum],
+            [#strong[#labels.tfg_num]#h(1.5mm) #tfgnum],
             v(22pt),
-            [#strong[Titor/a:]#h(1.5mm)  #tutor],
-            [#strong[Área de coñecemento:]#h(1.5mm)  #area],
-            [#strong[Departamento:]#h(1.5mm) #departamento],
+            [#strong[#labels.tutor]#h(1.5mm)  #tutor],
+            [#strong[#labels.area]#h(1.5mm)  #area],
+            [#strong[#labels.departamento]#h(1.5mm) #departamento],
           )
         ],
       )
@@ -118,11 +145,11 @@
   pagebreak()
   
   align(top)[
-    #text(fill: black, size: 18pt, weight: "regular")[Resumen]
+    #text(fill: black, size: 18pt, weight: "regular")[#labels.resumen]
     
     #resumen
     
-    #text(weight: "bold")[Palabras clave:]
+    #text(weight: "bold")[#labels.palabras_clave]
     #pclave
   ]
   /*align(bottom)[
@@ -136,7 +163,7 @@
   
   
   // text(font: "calibri", size: 18pt, fill: azulunir, weight: "light")[Índice de contenidos]
-  outline(title: "Índice de contenidos")
+  outline(title: labels.indice)
   //pagebreak()
   set page(
     footer: context [

@@ -7,6 +7,7 @@
   agradecimientos: quote(attribution: "Yo", block: true)[_A mis padres_],
   abstract: lorem(138),
   resumen: lorem(138),
+  idioma: "gl",
 )
 
 // Esto es para que la aplicación web reconozca el texto como en español y haga mejor detección de sintaxis.
